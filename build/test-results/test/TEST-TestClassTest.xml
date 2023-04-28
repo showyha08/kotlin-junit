@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestClassTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-28T12:29:33" hostname="MacBook-Air" time="0.056">
+  <properties/>
+  <testcase name="multiplyで2と7の乗算結果である14が取得できる()" classname="TestClassTest" time="0.056"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

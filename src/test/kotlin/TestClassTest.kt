@@ -75,5 +75,18 @@ class TestClassTest {
         assertThat(sut.get(0)).isEqualTo(1)
     }
 
+    @Test
+    fun `生成メソッドによるフィクスチャセットアップパターンを活用するテスト`() {
+        // 準備
+        val expected = Stringオブジェクト生成()
+        // 検証
+        assertThat(expected).isEqualTo("String")
+    }
+
+    //生成メソッドによるフィクスチャセットアップ
+    fun Stringオブジェクト生成(): String {
+        return "String"
+    }
 
 }
+

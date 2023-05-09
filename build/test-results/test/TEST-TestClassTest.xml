@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-30T15:20:32" hostname="MacBook-Air" time="0.049">
+<testsuite name="TestClassTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-09T13:38:21" hostname="MacBook-Air" time="0.063">
   <properties/>
-  <testcase name="副作用のあるテスト()" classname="TestClassTest" time="0.049"/>
+  <testcase name="生成メソッドによるフィクスチャセットアップパターンを活用するテスト()" classname="TestClassTest" time="0.063"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

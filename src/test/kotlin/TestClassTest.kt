@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 
 class TestClassTest {
@@ -83,9 +85,31 @@ class TestClassTest {
         assertThat(expected).isEqualTo("String")
     }
 
+    @Test
+    fun `生成メソッドによるフィクスチャセットアップパターンを活用するテスト2`() {
+        // 準備
+        val expected = TestClassHelper
+        // 検証
+        assertThat(expected.別クラスでのStringオブジェクト生成()).isEqualTo("String")
+    }
+
+
     //生成メソッドによるフィクスチャセットアップ
     fun Stringオブジェクト生成(): String {
         return "String"
+    }
+
+    //パラメータ化テスト
+    @ParameterizedTest
+    @ValueSource(ints = [1, 2, 3])
+    fun パラメータテストLessThan(n: Int) {
+        assertThat(n).isLessThan(10)
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = [1, 2, 3])
+    fun パラメータテストGreaterThan(n: Int) {
+        assertThat(n).isGreaterThan(0)
     }
 
 }

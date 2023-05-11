@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-11T15:32:15" hostname="MacBook-Air" time="0.084">
+<testsuite name="TestClassTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-11T15:57:45" hostname="MacBook-Air" time="0.055">
   <properties/>
-  <testcase name="[1] a, 1" classname="TestClassTest" time="0.055"/>
-  <testcase name="[2] b, 2" classname="TestClassTest" time="0.004"/>
-  <testcase name="[3] c, 3" classname="TestClassTest" time="0.005"/>
+  <testcase name="[1] 1, a" classname="TestClassTest" time="0.047"/>
+  <testcase name="[2] 2, b" classname="TestClassTest" time="0.004"/>
   <system-out><![CDATA[a
 1
 b
 2
-c
-3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

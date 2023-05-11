@@ -5,8 +5,12 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.CsvSource
+import org.junit.jupiter.params.provider.MethodSource
 import org.junit.jupiter.params.provider.ValueSource
+import java.util.stream.Stream
 
 
 class TestClassTest {
@@ -117,9 +121,28 @@ class TestClassTest {
     // 違う型の場合 a,0,b,1 となる
     @ParameterizedTest
     @CsvSource("a, 1", "b, 2", "c, 3")
-    fun testWithMultipleValueSources(s: String, i: Int) {
+    fun testWithMultipleValueSourcesForCSV(s: String, i: Int) {
         System.out.println(s)
         System.out.println(i)
     }
+
+    // MethodSourceを使う場合staticメソッドにする必要があり、JavaからStaticとして呼び出すには@JvmStaticをつける必要がある
+    companion object {
+        @JvmStatic
+        fun testProvider(): Stream<Arguments> {
+            return Stream.of(
+                arguments(1, "a"),
+                arguments(2, "b"),
+            )
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("testProvider")
+    fun testWithMultipleValueSourcesForMethodSource(i: Int, s: String) {
+        System.out.println(s)
+        System.out.println(i)
+    }
+
 }
 

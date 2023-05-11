@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.ValueSource
 
 
@@ -106,11 +107,19 @@ class TestClassTest {
         assertThat(n).isLessThan(10)
     }
 
+    // 同じ型の場合
     @ParameterizedTest
     @ValueSource(ints = [1, 2, 3])
     fun パラメータテストGreaterThan(n: Int) {
         assertThat(n).isGreaterThan(0)
     }
 
+    // 違う型の場合 a,0,b,1 となる
+    @ParameterizedTest
+    @CsvSource("a, 1", "b, 2", "c, 3")
+    fun testWithMultipleValueSources(s: String, i: Int) {
+        System.out.println(s)
+        System.out.println(i)
+    }
 }
 

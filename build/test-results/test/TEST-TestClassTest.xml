@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2023-05-12T13:26:12" hostname="MacBook-Air" time="0.044">
+<testsuite name="TestClassTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2023-05-12T13:47:00" hostname="MacBook-Air" time="0.066">
   <properties/>
-  <testcase name="testAssumeTrue()" classname="TestClassTest" time="0.044">
+  <testcase name="testAssumeTrue()" classname="TestClassTest" time="0.066">
     <skipped/>
   </testcase>
   <system-out><![CDATA[]]></system-out>

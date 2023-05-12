@@ -2,6 +2,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assumptions.assumeTrue
+import org.junit.jupiter.api.Assumptions.assumingThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -145,13 +146,27 @@ class TestClassTest {
         System.out.println(i)
     }
 
-    // Assumeを利用したテスト
+    // Assume(仮定,推定)を利用したテスト
     // AssumeTrueは、条件を満たしている場合に後続処理を続ける、満たさない場合はスキップする。
+    // 早期リターンみたいなもの
     @Test
     fun testAssumeTrue() {
+        assertThat(true).isTrue()
         assumeTrue(System.getProperties()["os.name"].toString().contains("Windows"))
         System.out.println("スキップされるよ")
+        // スキップされるためエラーにならない
+        assertThat(true).isFalse()
     }
 
+
+    // assumingThat(仮定して)は、条件を満たした場合に第２引数の処理を実行し、後続処理はスキップされない。
+    // if文みたいなもの
+    @Test
+    fun assumingThatを利用したテスト() {
+        assumingThat(
+            System.getProperties()["os.name"].toString().contains("Windows"),
+            { System.out.println("スキップされるよ") })
+        System.out.println("表示されるよ")
+    }
 }
 

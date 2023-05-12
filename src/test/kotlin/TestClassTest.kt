@@ -168,5 +168,14 @@ class TestClassTest {
             { System.out.println("スキップされるよ") })
         System.out.println("表示されるよ")
     }
+
+    // ParameterizedTestと組み合わせる
+    @ParameterizedTest
+    @ValueSource(ints = [-1, 0, 1, 2, 3])
+    fun パラメータテストとassumeTrueの組み合わせ(n: Int) {
+        // 0と-1をスキップし0より大きいテストを通す
+        assumeTrue(n != 0 && n != -1)
+        assertThat(n).isGreaterThan(0)
+    }
 }
 

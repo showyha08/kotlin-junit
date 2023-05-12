@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2023-05-12T13:47:00" hostname="MacBook-Air" time="0.066">
+<testsuite name="TestClassTest" tests="5" skipped="2" failures="0" errors="0" timestamp="2023-05-12T13:54:38" hostname="MacBook-Air" time="0.101">
   <properties/>
-  <testcase name="testAssumeTrue()" classname="TestClassTest" time="0.066">
+  <testcase name="[1] -1" classname="TestClassTest" time="0.056">
     <skipped/>
   </testcase>
+  <testcase name="[2] 0" classname="TestClassTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="[3] 1" classname="TestClassTest" time="0.023"/>
+  <testcase name="[4] 2" classname="TestClassTest" time="0.002"/>
+  <testcase name="[5] 3" classname="TestClassTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

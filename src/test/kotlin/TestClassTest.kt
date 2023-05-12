@@ -1,6 +1,7 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.Assumptions.assumingThat
 import org.junit.jupiter.api.BeforeEach
@@ -177,5 +178,15 @@ class TestClassTest {
         assumeTrue(n != 0 && n != -1)
         assertThat(n).isGreaterThan(0)
     }
+
+    // 第２引数にエラーメッセージを渡す
+    @Test
+    fun assertTrueでのエラーメッセージ() {
+        // 成功するよは出力されない
+        assertTrue(true, "成功するよ！")
+        //assertTrue(false, "失敗するよ！")
+        //org.opentest4j.AssertionFailedError: 失敗するよ！ ==> expected: <true> but was: <false>
+    }
+
 }
 

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assumptions.assumingThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.api.extension.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
@@ -20,10 +21,12 @@ class TestClassTest {
 
     @BeforeEach
     fun setUp() {
+        println("setupだよ")
     }
 
     @AfterEach
     fun tearDown() {
+        println("tearDownだよ")
     }
 
 
@@ -188,5 +191,35 @@ class TestClassTest {
         //org.opentest4j.AssertionFailedError: 失敗するよ！ ==> expected: <true> but was: <false>
     }
 
-}
+    // ルール
+    // JUnit5では@Ruleは廃止された
+    // Extensionになったため、@ExtendWithを利用して拡張する
+    class TestExtension : Extension, BeforeAllCallback, AfterAllCallback {
+        override fun beforeAll(context: ExtensionContext?) {
+            println("beforeAllのテスト！")
+        }
 
+        override fun afterAll(context: ExtensionContext?) {
+            println("afterAllのテスト！")
+        }
+    }
+
+    // この書き方だと拡張できない
+    @ExtendWith(TestExtension::class)
+    @Test
+    fun test() {
+        assertEquals(1, 1)
+    }
+
+
+    // クラスに対してだと拡張できる
+    // beforeAllのテスト！afterAllのテスト！が表示されsetupやtearDownは表示されない
+    @ExtendWith(TestExtension::class)
+    class MyTest {
+        @Test
+        fun test() {
+            assertEquals(1, 1)
+        }
+    }
+
+}

@@ -1,6 +1,7 @@
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -142,6 +143,14 @@ class TestClassTest {
     fun testWithMultipleValueSourcesForMethodSource(i: Int, s: String) {
         System.out.println(s)
         System.out.println(i)
+    }
+
+    // Assumeを利用したテスト
+    // AssumeTrueは、条件を満たしている場合に後続処理を続ける、満たさない場合はスキップする。
+    @Test
+    fun testAssumeTrue() {
+        assumeTrue(System.getProperties()["os.name"].toString().contains("Windows"))
+        System.out.println("スキップされるよ")
     }
 
 }

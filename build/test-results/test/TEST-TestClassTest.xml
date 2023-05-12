@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-11T15:57:45" hostname="MacBook-Air" time="0.055">
+<testsuite name="TestClassTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2023-05-12T13:26:12" hostname="MacBook-Air" time="0.044">
   <properties/>
-  <testcase name="[1] 1, a" classname="TestClassTest" time="0.047"/>
-  <testcase name="[2] 2, b" classname="TestClassTest" time="0.004"/>
-  <system-out><![CDATA[a
-1
-b
-2
-]]></system-out>
+  <testcase name="testAssumeTrue()" classname="TestClassTest" time="0.044">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

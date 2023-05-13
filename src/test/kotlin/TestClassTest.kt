@@ -233,7 +233,11 @@ class TestClassTest {
     fun TempDirのテスト() {
         val file = File(anotherTempDir, "test.txt")
         file.createNewFile()
+        // ファイルはこんな感じで作られる
+        // /var/folders/0w/_l7yyzkj53xfklc4z8t07hy80000gn/T/junit1505577895122092482/test.txt
         assertTrue(file.exists())
+        // テスト終了後自動的に削除される
+        // ls: /var/folders/0w/_l7yyzkj53xfklc4z8t07hy80000gn/T/junit1505577895122092482/test.txt: No such file or directory
     }
 
 

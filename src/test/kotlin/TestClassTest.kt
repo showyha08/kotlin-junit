@@ -8,12 +8,14 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.*
+import org.junit.jupiter.api.io.TempDir
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.MethodSource
 import org.junit.jupiter.params.provider.ValueSource
+import java.io.File
 import java.util.stream.Stream
 
 
@@ -215,11 +217,24 @@ class TestClassTest {
     // クラスに対してだと拡張できる
     // beforeAllのテスト！afterAllのテスト！が表示されsetupやtearDownは表示されない
     @ExtendWith(TestExtension::class)
-    class MyTest {
+    class ExtendWithTest {
         @Test
         fun test() {
             assertEquals(1, 1)
         }
     }
+
+    // JUnit5が自動的に初期化するのでlateinitにする
+    // lateinitはプリミティブ型は使えない、var、non-nullになる
+    @TempDir
+    lateinit var anotherTempDir: File
+
+    @Test
+    fun TempDirのテスト() {
+        val file = File(anotherTempDir, "test.txt")
+        file.createNewFile()
+        assertTrue(file.exists())
+    }
+
 
 }

@@ -1,12 +1,9 @@
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.Assumptions.assumingThat
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.*
 import org.junit.jupiter.api.io.TempDir
 import org.junit.jupiter.params.ParameterizedTest
@@ -238,6 +235,19 @@ class TestClassTest {
         assertTrue(file.exists())
         // テスト終了後自動的に削除される
         // ls: /var/folders/0w/_l7yyzkj53xfklc4z8t07hy80000gn/T/junit1505577895122092482/test.txt: No such file or directory
+    }
+
+    // Timeuotのテスト
+    @Test
+    fun testTimeout() {
+        // 5秒間スレッドを停止
+//        Thread.sleep(TimeUnit.SECONDS.toMillis(5))
+
+        // 次のアサーションは2秒以内に終わらないため失敗する
+//        assertTimeout(ofSeconds(2)) {
+//            Thread.sleep(TimeUnit.SECONDS.toMillis(5))
+//        }
+
     }
 
 

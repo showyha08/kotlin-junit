@@ -250,5 +250,15 @@ class TestClassTest {
 
     }
 
+    // テストメソッドとクラスを任意の名前で表示できる
+    // DisplayNameがある：TestInfo Demo！！！！！ > test2() PASSED
+    // DisplayNameがない：TestClassTest$TestInfoDemo > test2() PASSED
+    @DisplayName("TestInfo Demo！！！！！")
+
+    class TestInfoDemo(testInfo: TestInfo) {
+        @Test
+        fun test2() {
+        }
+    }
 
 }

@@ -13,6 +13,7 @@ import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.MethodSource
 import org.junit.jupiter.params.provider.ValueSource
 import java.io.File
+import java.util.*
 import java.util.stream.Stream
 
 
@@ -259,6 +260,21 @@ class TestClassTest {
         @Test
         fun test2() {
         }
+    }
+
+    class DateDependencyExample {
+        var date = Date()
+        fun doSomething() {
+            this.date = Date()
+        }
+    }
+
+    @Test
+    fun doSomethingでdateに現在時刻が設定されている() {
+        val sut = DateDependencyExample()
+        sut.doSomething()
+        // このアサーションは成功したり失敗したりする
+        assertEquals(sut.date, Date())
     }
 
 }

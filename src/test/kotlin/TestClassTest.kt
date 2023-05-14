@@ -262,19 +262,29 @@ class TestClassTest {
         }
     }
 
-    class DateDependencyExample {
+    open class DateDependencyExample {
         var date = date()
         fun doSomething() {
             this.date = date()
         }
 
         // ⌘+⌥+Mでメソッドを抽出
-        private fun date() = Date()
+        open fun date() = Date()
     }
 
     @Test
     fun doSomethingでdateに現在時刻が設定されている() {
-        val sut = DateDependencyExample()
+        val current = Date()
+
+        // 無名オブジェクトでオーバーライドして処理を差し替える
+        val sut = object : DateDependencyExample() {
+            override fun date() = current
+        }
+        // applyでも書ける
+//        val sut1 = DateDependencyExample().apply {
+//            date = current
+//        }
+
         sut.doSomething()
         // このアサーションは成功したり失敗したりする
         assertEquals(sut.date, Date())

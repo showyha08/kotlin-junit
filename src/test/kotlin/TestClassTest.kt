@@ -263,10 +263,13 @@ class TestClassTest {
     }
 
     class DateDependencyExample {
-        var date = Date()
+        var date = date()
         fun doSomething() {
-            this.date = Date()
+            this.date = date()
         }
+
+        // ⌘+⌥+Mでメソッドを抽出
+        private fun date() = Date()
     }
 
     @Test

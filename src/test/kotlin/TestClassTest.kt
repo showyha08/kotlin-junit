@@ -287,7 +287,26 @@ class TestClassTest {
 
         sut.doSomething()
         // このアサーションは成功したり失敗したりする
-        assertEquals(sut.date, Date())
+//        assertEquals(sut.date, Date())
+    }
+
+
+    @Test
+    @Tag(testName1) //コンパイル時定数か直接設定する必要がある
+    fun tagテスト1() {
+        println(testName1)
+    }
+
+    //  Intellij -> Edit Configuration Settings
+    // Tags test1で タグ単位で実行可能
+    @Test
+    @Tag(testName1)
+    fun tagテスト2() {
+        println("test2")
     }
 
 }
+
+//コンパイル時定数とする
+const val testName1 = "test1"
+

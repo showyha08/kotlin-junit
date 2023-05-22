@@ -1,1 +1,1 @@
-/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/MainKt.class:/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/TestClass.class
+/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/MainKt.class:/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/TestClass$BaseImpl.class:/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/TestClass$DelegationBase.class:/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/TestClass$Derived.class:/Users/oba/work/kotlin/kotlin-junit5/build/classes/kotlin/main/TestClass.class

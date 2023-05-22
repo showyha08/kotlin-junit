@@ -20,7 +20,11 @@ dependencies {
     }
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("org.assertj:assertj-core:3.11.1")
-    testImplementation("org.mockito:mockito-core:5.3.1")
+    //testImplementation("org.mockito:mockito-core:5.3.1")
+    testImplementation("io.mockk:mockk:1.13.5")
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    testImplementation("ch.qos.logback:logback-classic:1.4.7")
+
 }
 
 tasks.test {

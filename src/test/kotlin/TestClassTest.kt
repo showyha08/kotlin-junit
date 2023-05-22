@@ -1,3 +1,7 @@
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.spyk
+import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -304,6 +308,57 @@ class TestClassTest {
     fun tagテスト2() {
         println("test2")
     }
+
+    // モックオブジェクト作成
+    @Test
+    fun listMockTest() {
+        val listMock = mockk<ArrayList<String>>()
+        every { listMock.get(0) } returns ""
+        assertEquals(listMock.get(0), "")
+        every { listMock.get(1) }.throws(java.lang.Exception("dame"))
+        val error = assertThrows<Exception> {
+            listMock.get(1)
+        }
+        assertThat(error.message).isEqualTo("dame")
+        val listMock2 = mockk<ArrayList<String>>()
+
+        // anyメソッドでどんな引数でも対応できる
+        every { listMock2.get(any()) } returns ""
+        assertEquals(listMock2.get(2), "")
+        assertEquals(listMock2.get(-1), "")
+        assertEquals(listMock2.get(10000), "")
+
+        // clear()メソッドが呼ばれたことを検証する
+        every { listMock2.clear() } returns Unit
+        listMock2.clear()
+        verify { listMock2.clear() }
+
+        // 3回呼ばれた事を検証する
+        every { listMock2.get(3) } returns ""
+
+        listMock2.get(3)
+        listMock2.get(3)
+        listMock2.get(3)
+
+        verify(exactly = 3) { listMock2.get(3) }
+        // addは一度も呼ばれていない
+        verify(exactly = 0) { listMock2.add(any()) }
+    }
+
+    @Test
+    fun listSpyTest2() {
+        val list = ArrayList<Int>()
+        val spy = spyk(list)
+
+        list.add(1)
+        list.add(2)
+        spy.add(3)
+        spy.add(4)
+        verify(exactly = 2) { spy.add(any()) }
+        //verify(exactly = 2) { spy.add(any()) }
+
+    }
+
 
 }
 

@@ -1,126 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestClassTest" tests="34" skipped="3" failures="0" errors="0" timestamp="2023-05-19T17:06:25" hostname="MacBook-Air" time="0.39">
+<testsuite name="TestClassTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-21T05:12:39" hostname="MacBook-Air" time="3.802">
   <properties/>
-  <testcase name="devideで4と2の除算結果が取得できる()" classname="TestClassTest" time="0.04"/>
-  <testcase name="[1] 1" classname="TestClassTest" time="0.049"/>
-  <testcase name="[2] 2" classname="TestClassTest" time="0.003"/>
-  <testcase name="[3] 3" classname="TestClassTest" time="0.003"/>
-  <testcase name="testAssumeTrue()" classname="TestClassTest" time="0.014">
-    <skipped/>
-  </testcase>
-  <testcase name="testTimeout()" classname="TestClassTest" time="0.001"/>
-  <testcase name="[1] 1, a" classname="TestClassTest" time="0.009"/>
-  <testcase name="[2] 2, b" classname="TestClassTest" time="0.002"/>
-  <testcase name="TempDirのテスト()" classname="TestClassTest" time="0.007"/>
-  <testcase name="assertTrueでのエラーメッセージ()" classname="TestClassTest" time="0.004"/>
-  <testcase name="tagテスト1()" classname="TestClassTest" time="0.002"/>
-  <testcase name="tagテスト2()" classname="TestClassTest" time="0.004"/>
-  <testcase name="[1] -1" classname="TestClassTest" time="0.005">
-    <skipped/>
-  </testcase>
-  <testcase name="[2] 0" classname="TestClassTest" time="0.003">
-    <skipped/>
-  </testcase>
-  <testcase name="[3] 1" classname="TestClassTest" time="0.007"/>
-  <testcase name="[4] 2" classname="TestClassTest" time="0.006"/>
-  <testcase name="[5] 3" classname="TestClassTest" time="0.002"/>
-  <testcase name="生成メソッドによるフィクスチャセットアップパターンを活用するテスト()" classname="TestClassTest" time="0.01"/>
-  <testcase name="divideで0の除算でエラーを返す()" classname="TestClassTest" time="0.019"/>
-  <testcase name="副作用のあるテスト()" classname="TestClassTest" time="0.002"/>
-  <testcase name="test()" classname="TestClassTest" time="0.003"/>
-  <testcase name="multiplyで2と7の乗算結果である14が取得できる()" classname="TestClassTest" time="0.001"/>
-  <testcase name="[1] a, 1" classname="TestClassTest" time="0.005"/>
-  <testcase name="[2] b, 2" classname="TestClassTest" time="0.002"/>
-  <testcase name="[3] c, 3" classname="TestClassTest" time="0.001"/>
-  <testcase name="doSomethingでdateに現在時刻が設定されている()" classname="TestClassTest" time="0.005"/>
-  <testcase name="multiplyで1と2の乗算結果である2が取得できる()" classname="TestClassTest" time="0.002"/>
-  <testcase name="副作用のないメソッドのテスト()" classname="TestClassTest" time="0.004"/>
-  <testcase name="divideで3と2の除算結果が取得できる()" classname="TestClassTest" time="0.001"/>
-  <testcase name="生成メソッドによるフィクスチャセットアップパターンを活用するテスト2()" classname="TestClassTest" time="0.003"/>
-  <testcase name="assumingThatを利用したテスト()" classname="TestClassTest" time="0.004"/>
-  <testcase name="[1] 1" classname="TestClassTest" time="0.003"/>
-  <testcase name="[2] 2" classname="TestClassTest" time="0.001"/>
-  <testcase name="[3] 3" classname="TestClassTest" time="0.002"/>
+  <testcase name="listSpyTest2()" classname="TestClassTest" time="3.802"/>
   <system-out><![CDATA[setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-a
-1
-tearDownだよ
-setupだよ
-b
-2
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-test1
-tearDownだよ
-setupだよ
-test2
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-a
-1
-tearDownだよ
-setupだよ
-b
-2
-tearDownだよ
-setupだよ
-c
-3
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-表示されるよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
-tearDownだよ
-setupだよ
+14:12:39.964 [Test worker] DEBUG io.mockk.impl.instantiation.AbstractMockFactory -- Creating spyk for ArrayList name=#1
+14:12:43.023 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering [null, null, null, null, null, null, null, null, null, null] on ArrayList(#1).grow(1)
+14:12:43.030 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering [null, null, null, null, null, null, null, null, null, null] on ArrayList(#1).grow()
+14:12:43.035 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering null on ArrayList(#1).add(3, [], 0)
+14:12:43.037 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering true on ArrayList(#1).add(3)
+14:12:43.046 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering null on ArrayList(#1).add(4, [3, 4, null, null, null, null, null, null, null, null], 1)
+14:12:43.046 [Test worker] DEBUG io.mockk.impl.recording.states.AnsweringState -- Answering true on ArrayList(#1).add(4)
 tearDownだよ
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
